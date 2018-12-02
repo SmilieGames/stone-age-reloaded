@@ -5,6 +5,13 @@ import './App.css';
 import { Client } from 'boardgame.io/react';
 import { Game } from 'boardgame.io/core';
 
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+
 const StoneAge = Game({
   setup: () => ({
     currentCitizens: 8,
@@ -58,28 +65,39 @@ const StoneAge = Game({
     }
   }
 })
-//Hallo Don
-//du bist cool
 
-// Jo Ole, du auch :)
 class StoneAgeRenderer extends Component {
+
+  constructor(props){
+    super(props)
+
+    this.onEndTurnButtonClicked = this.onEndTurnButtonClicked.bind(this);
+  }
+
+  onEndTurnButtonClicked(){
+    this.props.moves.calculate();
+    this.props.events.endTurn();
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <AppBar position="static" color="default">
+          <Toolbar>            
+            <TextField
+              id="outlined-name"
+              label="Population / Max Population"
+              value={this.props.G.currentCitizens + " / " + this.props.G.maxCitizens}
+              margin="normal"
+              variant="outlined"
+            />
+          </Toolbar>
+
+        </AppBar>
+        <br/>
+        <Button variant="contained" onClick={this.onEndTurnButtonClicked}>
+          End Turn
+        </Button>
       </div>
     );
   }
