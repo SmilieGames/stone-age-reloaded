@@ -18,12 +18,31 @@ const StoneAge = Game({
     },
 
     factors: {
-      
       foodConsumptionPerCitizen: 1.0
     }
   }),
   moves: {
-    
+    addCitizensToAgrar(G, ctx){
+      if(G.agrar.currentCitizens < G.agrar.maxCitizens)
+        G.agrar.currentCitizens ++;
+    },
+    removeCitizensFromAgrar(G, ctx){
+      if(G.agrar.currentCitizens > 0)
+        G.agrar.currentCitizens--;
+    },
+    calculate(G, ctx){
+
+      // food consumption
+      let foodConsumption = G.currentCitizens * G.factors.foodConsumptionPerCitizen;
+      
+      // food production
+      G.food = G.food + G.agrar.currentCitizens * G.agrar.foodProductionFactor - foodConsumption;
+
+      // people
+      G.currentCitizens = G.currentCitizens + G.food / 10;
+
+      
+    }
   }
 })
 
