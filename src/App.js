@@ -32,16 +32,29 @@ const StoneAge = Game({
     },
     calculate(G, ctx){
 
-      // food consumption
-      let foodConsumption = G.currentCitizens * G.factors.foodConsumptionPerCitizen;
-      
       // food production
-      G.food = G.food + G.agrar.currentCitizens * G.agrar.foodProductionFactor - foodConsumption;
+      G.food = G.food + G.agrar.currentCitizens * G.agrar.foodProductionFactor;
 
-      // people
-      G.currentCitizens = G.currentCitizens + G.food / 10;
-
+      // food consumption
+      for(let i = 0; i < G.currentCitizens; i++){
+        if(G.food >= G.factors.foodConsumptionPerCitizen){
+          G.food = G.food - G.factors.foodConsumptionPerCitizen;
+        }else{
+          G.currentCitizens = i + 1;
+          break;
+        }
+      }
       
+      // add people if food is left
+      while(G.food >= 10 && G.currentCitizens <= G.maxCitizens){
+        G.food -= 10;
+        G.currentCitizens++;
+      }
+
+      // don't let food build up indefinetly. Otherwise you could hoard food and build houses later on and BOOM massive citizen rate in one turn.
+      if(G.food > 10){
+        G.food = 9;
+      }
     }
   }
 })
