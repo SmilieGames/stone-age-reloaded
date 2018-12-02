@@ -51,7 +51,7 @@ const StoneAge = Game({
         G.currentCitizens++;
       }
 
-      // don't let food build up indefinetly. Otherwise you could hoard food and build houses later on and BOOM massive citizen rate in one turn.
+      // don't let food build up indefinitely. Otherwise you could hoard food and build houses later on and BOOM massive citizen rate in one turn.
       if(G.food > 10){
         G.food = 9;
       }
