@@ -2,7 +2,32 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+import { Client } from 'boardgame.io/react';
+import { Game } from 'boardgame.io/core';
+
+const StoneAge = Game({
+  setup: () => ({
+    currentCitizens: 8,
+    maxCitizens: 12,
+    food: 0,
+
+    agrar: {
+      currentCitizens: 0,
+      maxCitizens: 10,
+      foodProductionFactor: 2.0
+    },
+
+    factors: {
+      
+      foodConsumptionPerCitizen: 1.0
+    }
+  }),
+  moves: {
+    
+  }
+})
+
+class StoneAgeRenderer extends Component {
   render() {
     return (
       <div className="App">
@@ -24,5 +49,10 @@ class App extends Component {
     );
   }
 }
+
+const App = Client({
+  game: StoneAge,
+  board: StoneAgeRenderer
+})
 
 export default App;
