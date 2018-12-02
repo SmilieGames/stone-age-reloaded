@@ -66,6 +66,7 @@ const StoneAge = Game({
   }
 })
 
+
 class StoneAgeRenderer extends Component {
 
   constructor(props){
