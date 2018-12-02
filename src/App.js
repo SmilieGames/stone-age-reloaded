@@ -60,6 +60,7 @@ const StoneAge = Game({
 })
 //Hallo Don
 //du bist cool
+//derbe geil
 class StoneAgeRenderer extends Component {
   render() {
     return (
