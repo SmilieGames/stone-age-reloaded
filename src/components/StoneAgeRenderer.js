@@ -12,20 +12,32 @@ import StoreIcon from '@material-ui/icons/Store';
 import AutorenewIcon from '@material-ui/icons/Autorenew'
 import SendIcon from '@material-ui/icons/Send'
 
+// Constants for the currently shown view (the indexes are used by the bottom navigation)
+const Views = {
+    Village: 0,
+    Technology: 1,
+    Buildings: 2,
+    Evolution: 3
+}
 
 class StoneAgeRenderer extends Component {
 
   constructor(props){
     super(props)
 
+    this.state = {
+      currentView: Views.Village // set default view
+    }
+
     this.onEndTurnButtonClicked = this.onEndTurnButtonClicked.bind(this);
   }
+
 
   onEndTurnButtonClicked(){
     this.props.moves.calculate();
     this.props.events.endTurn();
   }
-
+  
   render() {
     return (
       <div className="App">
@@ -47,13 +59,13 @@ class StoneAgeRenderer extends Component {
         </div>
         
         <BottomNavigation
-          value={0}
+          value={this.state.currentView}
           showLabels
         >
-          <BottomNavigationAction label="Village" icon={<HomeIcon />} />
-          <BottomNavigationAction label="Technology" icon={<BuildIcon />} />
-          <BottomNavigationAction label="Buildings" icon={<StoreIcon />} />
-          <BottomNavigationAction label="Evolution" icon={<AutorenewIcon />} />
+          <BottomNavigationAction label="Village"    icon={<HomeIcon />}     onClick={() => this.setState({currentView: Views.Village})} />
+          <BottomNavigationAction label="Technology" icon={<BuildIcon/>}     onClick={() => this.setState({currentView: Views.Technology})} />
+          <BottomNavigationAction label="Buildings"  icon={<StoreIcon/>}     onClick={() => this.setState({currentView: Views.Buildings})} />
+          <BottomNavigationAction label="Evolution"  icon={<AutorenewIcon/>} onClick={() => this.setState({currentView: Views.Evolution})} />
           <BottomNavigationAction disabled />
           <BottomNavigationAction label="End Turn" icon={<SendIcon style={{color:'green'}}/>} onClick={this.onEndTurnButtonClicked} />
         </BottomNavigation>
