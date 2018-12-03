@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "f90b18fab053cc0e34f7",
+    "revision": "9dfe92c4f3b54f35b2c8",
     "url": "/stone-age-reloaded/static/css/main.9db80422.chunk.css"
   },
   {
-    "revision": "f90b18fab053cc0e34f7",
-    "url": "/stone-age-reloaded/static/js/main.f90b18fa.chunk.js"
+    "revision": "9dfe92c4f3b54f35b2c8",
+    "url": "/stone-age-reloaded/static/js/main.9dfe92c4.chunk.js"
   },
   {
     "revision": "b52480c10a8b41130eac",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/stone-age-reloaded/static/js/runtime~main.7785a42f.js"
   },
   {
-    "revision": "a3b448d83186b2fcb117f8f5be31dc31",
+    "revision": "de00f58b824419220c76780f8f702077",
     "url": "/stone-age-reloaded/index.html"
   }
 ];
