@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/stone-age-reloaded/static/js/runtime~main.7785a42f.js"
   },
   {
-    "revision": "786b4a881765f532591f2f835039a210",
+    "revision": "a3b448d83186b2fcb117f8f5be31dc31",
     "url": "/stone-age-reloaded/index.html"
   }
 ];
