@@ -15,8 +15,9 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/Home';
 import BuildIcon from '@material-ui/icons/Build';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-
+import StoreIcon from '@material-ui/icons/Store';
+import AutorenewIcon from '@material-ui/icons/Autorenew'
+import SendIcon from '@material-ui/icons/Send'
 
 const StoneAge = Game({
   setup: () => ({
@@ -101,7 +102,9 @@ class StoneAgeRenderer extends Component {
           </Toolbar>
 
         </AppBar>
-        <br/>
+        <div>
+
+        </div>
         
         <BottomNavigation
           value={0}
@@ -109,11 +112,10 @@ class StoneAgeRenderer extends Component {
         >
           <BottomNavigationAction label="Village" icon={<HomeIcon />} />
           <BottomNavigationAction label="Technology" icon={<BuildIcon />} />
-          <BottomNavigationAction label="Buildings" icon={<LocationOnIcon />} />
-          <BottomNavigationAction label="Evolution" icon={<LocationOnIcon />} />
-          <Button variant="contained" onClick={this.onEndTurnButtonClicked}>
-            End Turn
-          </Button>
+          <BottomNavigationAction label="Buildings" icon={<StoreIcon />} />
+          <BottomNavigationAction label="Evolution" icon={<AutorenewIcon />} />
+          <BottomNavigationAction disabled />
+          <BottomNavigationAction label="End Turn" icon={<SendIcon style={{color:'green'}}/>} onClick={this.onEndTurnButtonClicked} />
         </BottomNavigation>
       </div>
     );
