@@ -102,8 +102,9 @@ class StoneAgeRenderer extends Component {
           </Toolbar>
 
         </AppBar>
-        <div>
 
+        <div style={{backgroundColor: 'lightGray'}}>
+          <p style={{paddingTop: '300px', paddingBottom: '300px', margin: '0px'}}>Placeholder</p>
         </div>
         
         <BottomNavigation
