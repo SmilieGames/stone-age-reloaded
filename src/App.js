@@ -11,6 +11,12 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import HomeIcon from '@material-ui/icons/Home';
+import BuildIcon from '@material-ui/icons/Build';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+
 
 const StoneAge = Game({
   setup: () => ({
@@ -96,9 +102,19 @@ class StoneAgeRenderer extends Component {
 
         </AppBar>
         <br/>
-        <Button variant="contained" onClick={this.onEndTurnButtonClicked}>
-          End Turn
-        </Button>
+        
+        <BottomNavigation
+          value={0}
+          showLabels
+        >
+          <BottomNavigationAction label="Village" icon={<HomeIcon />} />
+          <BottomNavigationAction label="Technology" icon={<BuildIcon />} />
+          <BottomNavigationAction label="Buildings" icon={<LocationOnIcon />} />
+          <BottomNavigationAction label="Evolution" icon={<LocationOnIcon />} />
+          <Button variant="contained" onClick={this.onEndTurnButtonClicked}>
+            End Turn
+          </Button>
+        </BottomNavigation>
       </div>
     );
   }
@@ -106,7 +122,8 @@ class StoneAgeRenderer extends Component {
 
 const App = Client({
   game: StoneAge,
-  board: StoneAgeRenderer
+  board: StoneAgeRenderer,
+  numPlayers: 1
 })
 
 export default App;
