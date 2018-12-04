@@ -3,6 +3,7 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const Tile = (props) => {
   return (
@@ -18,8 +19,19 @@ const StatusField = (props) => {
       <Typography variant="h5" gutterBottom>
         {props.label}
       </Typography>
-      <Typography variant="h6" gutterBottom>
+      
+      <Typography variant="h6" gutterBottom style={{paddingBottom: "5%"}}>
+        {/** Check if function to remove a citizen exists in props. If yes, add button and assign onClick */}
+        {!!props.removeFunction && (
+          <Button style={{marginRight: "4%"}} variant="contained" size="small" onClick={props.removeFunction}>-</Button>
+        )}
+        {/** Always render the current citizens. Only render the max citizens in applicable */}
         { props.currentCitizens + ((props.maxCitizen)? " / " + props.maxCitizen : "") }
+        {/** Check if function to add a citizen exists in props. If yes, add button and assign onClick */}
+        {!!props.addFunction && (
+          <Button style={{marginLeft: "4%"}} variant="contained" size="small" onClick={props.addFunction}>+</Button>
+        )}
+        
       </Typography>
     </Paper>
   )
@@ -30,7 +42,12 @@ const Village = (props) => {
     <Grid style={{ backgroundColor: 'lightGray' }} container spacing={0}>
       <Tile />
       <Tile>
-        <StatusField label="Agrar" currentCitizens={props.G.agrar.currentCitizens} maxCitizen={props.G.agrar.maxCitizen}/>
+        <StatusField 
+          label="Agrar" 
+          currentCitizens={props.G.agrar.currentCitizens} 
+          maxCitizen={props.G.agrar.maxCitizens}
+          removeFunction={props.moves.removeCitizensFromAgrar}
+          addFunction={props.moves.addCitizensToAgrar}/>
       </Tile>
       <Tile />
       <Tile>
