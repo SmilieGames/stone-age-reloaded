@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -16,7 +16,7 @@ const Village = (props) => {
         <Grid style={{backgroundColor: 'lightGray'}} container spacing={0}>
             <Tile/>
             <Tile>
-                <Paper>Agrar {props.G.agrar.currentCitizens}</Paper>
+                <Paper style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Agrar {props.G.agrar.currentCitizens}</Paper>
             </Tile>
             <Tile/>
             <Tile>
