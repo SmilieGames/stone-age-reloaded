@@ -1,5 +1,6 @@
 import { Game } from 'boardgame.io/core';
 
+import { getCurrentCitizens } from './Utils'
 
 const StoneAge = Game({
   setup: () => ({
@@ -8,6 +9,7 @@ const StoneAge = Game({
     resources: {
         food: 0
     },
+    
     village: {
         currentCitizens: 8
     },
@@ -23,7 +25,7 @@ const StoneAge = Game({
   }),
   moves: {
     addCitizensToAgrar(G, ctx){
-      if(G.agrar.currentCitizens < G.agrar.maxCitizens){
+      if(G.agrar.currentCitizens < G.agrar.maxCitizens && G.village.currentCitizens > 0){
         G.agrar.currentCitizens++;
         G.village.currentCitizens--;
       }
@@ -39,20 +41,24 @@ const StoneAge = Game({
       // food production
       G.resources.food = G.resources.food + G.agrar.currentCitizens * G.agrar.foodProductionFactor;
 
-      // food consumption
-      for(let i = 0; i < G.currentCitizens; i++){
-        if(G.resources.food >= G.factors.foodConsumptionPerCitizen){
-          G.resources.food = G.resources.food - G.factors.foodConsumptionPerCitizen;
-        }else{
-          G.currentCitizens = i + 1;
-          break;
+      // food consumption (adjusted for new citizens)
+      for(var key in G){
+        if(G[key].currentCitizens != null){
+          for(let i = 0; i < G[key].currentCitizens; i++){
+            if(G.resources.food >= G.factors.foodConsumptionPerCitizen){
+              G.resources.food = G.resources.food - G.factors.foodConsumptionPerCitizen;
+            }else{
+              G[key].currentCitizens = i;
+              break;
+            }
+          }
         }
       }
       
       // add people if food is left
-      while(G.resources.food >= 10 && G.currentCitizens <= G.maxCitizens){
+      while(G.resources.food >= 10 && getCurrentCitizens(G) < G.maxCitizens){
         G.resources.food -= 10;
-        G.currentCitizens++;
+        G.village.currentCitizens++;
       }
 
       // don't let food build up indefinitely. Otherwise you could hoard food and build houses later on and BOOM massive citizen rate in one turn.

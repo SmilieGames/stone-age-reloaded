@@ -15,6 +15,8 @@ import SendIcon from '@material-ui/icons/Send'
 
 import Village from './screens/Village'
 
+import {getCurrentCitizens} from './Utils'
+
 // Constants for the currently shown view (the indexes are used by the bottom navigation)
 const Views = {
   Village: 0,
@@ -99,20 +101,6 @@ class StoneAgeRenderer extends Component {
       </div>
     );
   }
-}
-
-// calculate the current citizens from the current game state
-function getCurrentCitizens(G){
-
-  let currentCitizens = 0;
-
-  for(var key in G){
-    if(G[key].currentCitizens != null){
-      currentCitizens += G[key].currentCitizens
-    }
-  }
-
-  return currentCitizens;
 }
 
 export default StoneAgeRenderer;
