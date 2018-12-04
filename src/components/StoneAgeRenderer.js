@@ -57,7 +57,7 @@ class StoneAgeRenderer extends Component {
           <TextField
             id="outlined-name"
             label="Population / Max Population"
-            value={" / " + this.props.G.maxCitizens}
+            value={ getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens}
             margin="normal"
             variant="outlined"
           />
@@ -99,6 +99,20 @@ class StoneAgeRenderer extends Component {
       </div>
     );
   }
+}
+
+// calculate the current citizens from the current game state
+function getCurrentCitizens(G){
+
+  let currentCitizens = 0;
+
+  for(var key in G){
+    if(G[key].currentCitizens != null){
+      currentCitizens += G[key].currentCitizens
+    }
+  }
+
+  return currentCitizens;
 }
 
 export default StoneAgeRenderer;

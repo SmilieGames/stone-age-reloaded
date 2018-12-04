@@ -12,39 +12,45 @@ const Tile = (props) => {
   )
 }
 
+const StatusField = (props) => {
+  return (
+    <Paper style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+      <Typography variant="h5" gutterBottom>
+        {props.label}
+      </Typography>
+      <Typography variant="h6" gutterBottom>
+        { props.currentCitizens + ((props.maxCitizen)? " / " + props.maxCitizen : "") }
+      </Typography>
+    </Paper>
+  )
+}
+
 const Village = (props) => {
   return (
     <Grid style={{ backgroundColor: 'lightGray' }} container spacing={0}>
       <Tile />
       <Tile>
-        <Paper style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Agrar {props.G.agrar.currentCitizens}</Paper>
+        <StatusField label="Agrar" currentCitizens={props.G.agrar.currentCitizens} maxCitizen={props.G.agrar.maxCitizen}/>
       </Tile>
       <Tile />
       <Tile>
-        <Paper>Culture</Paper>
+        <StatusField label="Culture"/>
       </Tile>
 
       <Tile />
       <Tile>
-        <Paper >Fruits</Paper>
+        <StatusField label="Fruits"/>
       </Tile>
       <Tile />
       <Tile>
-        <Paper >Stone</Paper>
+        <StatusField label="Stone"/>
       </Tile>
 
       <Tile>
-        <Paper style={{ marginTop: '8%', marginLeft: '20%', marginRight: '20%' }}>
-          <Typography variant="h5" gutterBottom>
-            Village
-                    </Typography>
-          <Typography variant="h6" gutterBottom>
-            {props.G.village.currentCitizens}
-          </Typography>
-        </Paper>
+        <StatusField label="Village" currentCitizens={props.G.village.currentCitizens}/>
       </Tile>
       <Tile>
-        <Paper >Fishing</Paper>
+        <StatusField label="Fishing"/>
       </Tile>
       <Tile />
       <Tile />

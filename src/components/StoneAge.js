@@ -1,5 +1,6 @@
 import { Game } from 'boardgame.io/core';
 
+
 const StoneAge = Game({
   setup: () => ({
     maxCitizens: 12,
@@ -22,12 +23,16 @@ const StoneAge = Game({
   }),
   moves: {
     addCitizensToAgrar(G, ctx){
-      if(G.agrar.currentCitizens < G.agrar.maxCitizens)
-        G.agrar.currentCitizens ++;
+      if(G.agrar.currentCitizens < G.agrar.maxCitizens){
+        G.agrar.currentCitizens++;
+        G.village.currentCitizens--;
+      }
     },
     removeCitizensFromAgrar(G, ctx){
-      if(G.agrar.currentCitizens > 0)
+      if(G.agrar.currentCitizens > 0){
         G.agrar.currentCitizens--;
+        G.village.currentCitizens++;
+      }
     },
     calculate(G, ctx){
 
