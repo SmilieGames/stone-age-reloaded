@@ -13,7 +13,7 @@ import StoreIcon from '@material-ui/icons/Store';
 import AutorenewIcon from '@material-ui/icons/Autorenew'
 import SendIcon from '@material-ui/icons/Send'
 
-import Village from './screens/village'
+import Village from './screens/Village'
 
 // Constants for the currently shown view (the indexes are used by the bottom navigation)
 const Views = {
