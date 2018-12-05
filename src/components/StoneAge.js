@@ -1,14 +1,18 @@
 import { Game } from 'boardgame.io/core';
 
 import { getCurrentCitizens } from './Utils'
-import AgrarMoves from './moves/AgrarMoves'
+import VillageMoves from './moves/VillageMoves'
 
 const StoneAge = Game({
   setup: () => ({
     maxCitizens: 12,
 
     resources: {
-        food: 0
+        food: 0,
+        // new ressources added but not linked
+        reseachPoints: 0,
+        culture: 0,
+        production: 0
     },
 
     agrar: {
@@ -16,24 +20,32 @@ const StoneAge = Game({
       maxCitizens: 10,
       foodProductionFactor: 2.0
     },
+    // new Object Mining added but not linked
+    mining:{
+      currentCitizens: 0,
+      maxCitizens: 0,
+      productionProductionFactor: 2.0
+    },
+    // new Object religion added but not linked
+    religion:{
+      currentCitizens: 0,
+      maxCitizens: 0,
+      religionProductionFactor: 2.0
+    },
 
     village: {
       currentCitizens: 8
+      //tbd productionFactor e.g. military
     },
 
     factors: {
       foodConsumptionPerCitizen: 1.0
     },
-    /*
-    ich glaube hier die Falsche stelle. Ich will erst alle freigeschalteten Technologieboni addieren bevor sie den wirklichen Faktoren addiert
-    technologyBonus:{
-      bonusFoodProductionFactor: 0
 
-    }
-    */
   }),
   moves: {
-    ...AgrarMoves,
+    ...VillageMoves.AgrarMoves,
+    // wird zu ...VillageMoves
     
     calculate(G, ctx){
 
