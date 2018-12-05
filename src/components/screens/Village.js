@@ -14,28 +14,39 @@ const Tile = (props) => {
 }
 
 
-const StatusField = (props) => {
-  return (
-    <Paper style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
-      <Typography variant="h5" gutterBottom>
-        {props.label}
-      </Typography>
-      
-      <Typography variant="h6" gutterBottom style={{paddingBottom: "5%"}}>
-        {/** Check if function to remove a citizen exists in props. If yes, add button and assign onClick */}
-        {!!props.removeFunction && (
-          <Button style={{marginRight: "4%"}} variant="contained" size="small" onClick={props.removeFunction}>-</Button>
-        )}
-        {/** Always render the current citizens. Only render the max citizens in applicable */}
-        { props.currentCitizens + ((props.maxCitizen)? " / " + props.maxCitizen : "") }
-        {/** Check if function to add a citizen exists in props. If yes, add button and assign onClick */}
-        {!!props.addFunction && (
-          <Button style={{marginLeft: "4%"}} variant="contained" size="small" onClick={props.addFunction}>+</Button>
-        )}
+class StatusField extends React.Component {
+
+  handleRemove(){
+    this.props.removeFunction(this.props.station);
+  }
+
+  handleAdd(){
+    this.props.addFunction(this.props.station);
+  }
+
+  render() {    
+    return (
+      <Paper style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+        <Typography variant="h5" gutterBottom>
+          {this.props.label}
+        </Typography>
         
-      </Typography>
-    </Paper>
-  )
+        <Typography variant="h6" gutterBottom style={{paddingBottom: "5%"}}>
+          {/** Check if function to remove a citizen exists in this.props. If yes, add button and assign onClick */}
+          {!!this.props.removeFunction && (
+            <Button style={{marginRight: "4%"}} variant="contained" size="small" onClick={this.handleRemove.bind(this)}>-</Button>
+          )}
+          {/** Always render the current citizens. Only render the max citizens in applicable */}
+          { this.props.currentCitizens + ((this.props.maxCitizen)? " / " + this.props.maxCitizen : "") }
+          {/** Check if function to add a citizen exists in this.props. If yes, add button and assign onClick */}
+          {!!this.props.addFunction && (
+            <Button style={{marginLeft: "4%"}} variant="contained" size="small" onClick={this.handleAdd.bind(this)}>+</Button>
+          )}
+          
+        </Typography>
+      </Paper>
+    )
+  }
 }
 
 const Village = (props) => {
@@ -47,8 +58,9 @@ const Village = (props) => {
           label="Agrar" 
           currentCitizens={props.G.agrar.currentCitizens} 
           maxCitizen={props.G.agrar.maxCitizens}
-          removeFunction={props.moves.removeCitizensFromAgrar}
-          addFunction={props.moves.addCitizensToAgrar}/>
+          removeFunction={props.moves.removeCitizens}
+          addFunction={props.moves.addCitizens}
+          station="agrar"/>
       </Tile>
       <Tile />
       <Tile>

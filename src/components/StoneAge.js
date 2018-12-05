@@ -44,7 +44,7 @@ const StoneAge = Game({
 
   }),
   moves: {
-    ...VillageMoves.AgrarMoves,
+    ...VillageMoves,
     // wird zu ...VillageMoves
     
     calculate(G, ctx){

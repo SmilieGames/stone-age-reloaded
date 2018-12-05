@@ -12,23 +12,22 @@ const VillageMoves = {
         G.village.currentCitizens++;
       }
     }
-  }
+  },
 
-  /*besser: nur addCitizens und removeCiiitizens
-  addCitizensToAgrar(G, selectedStation, ctx){
-    if(G[selectedStation]. < G.agrar.maxCitizens && G[selectedStation].currentCitizens > 0){
+  
+  addCitizens(G, ctx, selectedStation){
+    if(G[selectedStation].currentCitizens < G[selectedStation].maxCitizens && G.village.currentCitizens > 0){
       G[selectedStation].currentCitizens++;
       G.village.currentCitizens--;
     }
   },
-  removeCitizensFromAgrar(G, selectedStation, ctx){
+  removeCitizens(G, ctx, selectedStation){
     if(G[selectedStation].currentCitizens > 0){
       G[selectedStation].currentCitizens--;
       G.village.currentCitizens++;
     }
   }
 
-  */
 /*
   ProductionMoves: {
     addCitizensToAgrar(G, ctx){
