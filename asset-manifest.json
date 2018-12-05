@@ -1,13 +1,13 @@
 {
-  "main.css": "/stone-age-reloaded/static/css/main.27c4d4dd.chunk.css",
-  "main.js": "/stone-age-reloaded/static/js/main.09fbc12a.chunk.js",
-  "main.js.map": "/stone-age-reloaded/static/js/main.09fbc12a.chunk.js.map",
-  "static/js/1.1430f712.chunk.js": "/stone-age-reloaded/static/js/1.1430f712.chunk.js",
-  "static/js/1.1430f712.chunk.js.map": "/stone-age-reloaded/static/js/1.1430f712.chunk.js.map",
+  "main.css": "/stone-age-reloaded/static/css/main.ff1cf7f8.chunk.css",
+  "main.js": "/stone-age-reloaded/static/js/main.c52c6e37.chunk.js",
+  "main.js.map": "/stone-age-reloaded/static/js/main.c52c6e37.chunk.js.map",
+  "static/js/1.54161105.chunk.js": "/stone-age-reloaded/static/js/1.54161105.chunk.js",
+  "static/js/1.54161105.chunk.js.map": "/stone-age-reloaded/static/js/1.54161105.chunk.js.map",
   "runtime~main.js": "/stone-age-reloaded/static/js/runtime~main.7785a42f.js",
   "runtime~main.js.map": "/stone-age-reloaded/static/js/runtime~main.7785a42f.js.map",
-  "static/css/main.27c4d4dd.chunk.css.map": "/stone-age-reloaded/static/css/main.27c4d4dd.chunk.css.map",
+  "static/css/main.ff1cf7f8.chunk.css.map": "/stone-age-reloaded/static/css/main.ff1cf7f8.chunk.css.map",
   "index.html": "/stone-age-reloaded/index.html",
-  "precache-manifest.1c8c2bbc325512af37c542922c47f196.js": "/stone-age-reloaded/precache-manifest.1c8c2bbc325512af37c542922c47f196.js",
+  "precache-manifest.16f4b17df0b82f930c933ca1fb283cc3.js": "/stone-age-reloaded/precache-manifest.16f4b17df0b82f930c933ca1fb283cc3.js",
   "service-worker.js": "/stone-age-reloaded/service-worker.js"
 }
