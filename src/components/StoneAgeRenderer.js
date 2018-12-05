@@ -14,7 +14,7 @@ import AutorenewIcon from '@material-ui/icons/Autorenew'
 import SendIcon from '@material-ui/icons/Send'
 
 import Village from './screens/Village'
-import Technology from './screens/Technology'
+import TechTree from './screens/TechTree'
 
 import {getCurrentCitizens} from './Utils'
 
@@ -51,7 +51,7 @@ class StoneAgeRenderer extends Component {
       case Views.Village:
         return <Village {...this.props} />
       case Views.Technology:
-        return <Technology {...this.props} />
+        return <TechTree {...this.props} />
       default: 
         return <div/>
     }

@@ -29,7 +29,7 @@ const Tech= (props) => {
   )
 }
 
-const Technology = (props) => {
+const TechTree = (props) => {
   return (
     <Grid container spacing={0}>
       <Tile toBottom><Tech label="gathering"/></Tile>
@@ -49,12 +49,12 @@ const Technology = (props) => {
       <Tile />
       <Tile><Tech label="use of fire"/></Tile>
       <Tile />
-      <Tile><Tech label="fur clothing"/></Tile>
+      <Tile fromTop toBottom><Tech label="fur clothing"/></Tile>
       <Tile />
-      <Tile><Tech label="improved stone tools"/></Tile>
-      <Tile><Tech label="primitive weapons"/></Tile>
-      <Tile />
-      <Tile />
+      <Tile fromTop toBottom><Tech label="improved stone tools"/></Tile>
+      <Tile fromTop toBottom><Tech label="primitive weapons"/></Tile>
+      <Tile fromTop toBottom/>
+      <Tile fromTop toBottom/>
       <Tile />
       <Tile />
 
@@ -62,12 +62,12 @@ const Technology = (props) => {
       <Tile toBottom><Tech label="religion"/></Tile>
       <Tile />
       <Tile toBottom><Tech label="buidling of fire"/></Tile>
+      <Tile fromTop toBottom/>
       <Tile />
-      <Tile />
-      <Tile />
-      <Tile><Tech label="thrown weapons"/></Tile>
-      <Tile><Tech label="trapping"/></Tile>
-      <Tile><Tech label="fishing"/></Tile>
+      <Tile fromTop toBottom/>
+      <Tile fromTop toBottom><Tech label="thrown weapons"/></Tile>
+      <Tile fromTop toBottom><Tech label="trapping"/></Tile>
+      <Tile fromTop toBottom><Tech label="fishing"/></Tile>
       <Tile />
       <Tile />
 
@@ -75,25 +75,25 @@ const Technology = (props) => {
       <Tile fromTop toBottom><Tech label="art"/></Tile>
       <Tile />
       <Tile fromTop toBottom><Tech label="shelter"/></Tile>
+      <Tile fromTop toBottom/>
       <Tile />
-      <Tile />
-      <Tile><Tech label="advanced stone tools"/></Tile>
-      <Tile />
-      <Tile><Tech label="captive animals"/></Tile>
-      <Tile />
+      <Tile fromTop toBottom><Tech label="advanced stone tools"/></Tile>
+      <Tile fromTop toBottom/>
+      <Tile fromTop toBottom><Tech label="captive animals"/></Tile>
+      <Tile fromTop toBottom/>
       <Tile />
       <Tile />
 
       <Tile fromTop toBottom><Tech label="agriculture"/></Tile>
       <Tile fromTop><Tech label="adorment"/></Tile>
-      <Tile><Tech label="pottery"/></Tile>
+      <Tile fromTop><Tech label="pottery"/></Tile>
       <Tile fromTop toBottom><Tech label="architecture"/></Tile>
-      <Tile><Tech label="cloth outfit"/></Tile>
+      <Tile fromTop><Tech label="cloth outfit"/></Tile>
       <Tile />
-      <Tile><Tech label="component tools"/></Tile>
-      <Tile><Tech label="ranged weapons"/></Tile>
-      <Tile><Tech label="domestication"/></Tile>
-      <Tile><Tech label="fish hooks"/></Tile>
+      <Tile fromTop><Tech label="component tools"/></Tile>
+      <Tile fromTop toBottom><Tech label="ranged weapons"/></Tile>
+      <Tile fromTop toBottom><Tech label="domest."/></Tile>
+      <Tile fromTop toBottom><Tech label="fish hooks"/></Tile>
       <Tile />
       <Tile />
 
@@ -105,8 +105,8 @@ const Technology = (props) => {
       <Tile />
       <Tile />
       <Tile />
-      <Tile><Tech label="animal husbandry"/></Tile>
-      <Tile><Tech label="fishing nets"/></Tile>
+      <Tile fromTop><Tech label="animal husbandry"/></Tile>
+      <Tile fromTop><Tech label="fishing nets"/></Tile>
       <Tile />
       <Tile />
       
@@ -114,4 +114,4 @@ const Technology = (props) => {
   );
 }
 
-export default Technology;
+export default TechTree;
