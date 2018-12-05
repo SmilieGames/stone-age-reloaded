@@ -74,12 +74,12 @@ class StoneAgeRenderer extends Component {
         value={currentView}
         showLabels
       >
-        <BottomNavigationAction label="Village" icon={<HomeIcon />} onClick={() => this.setState({ currentView: Views.Village })} />
-        <BottomNavigationAction label="Technology" icon={<BuildIcon />} onClick={() => this.setState({ currentView: Views.Technology })} />
-        <BottomNavigationAction label="Buildings" icon={<StoreIcon />} onClick={() => this.setState({ currentView: Views.Buildings })} />
-        <BottomNavigationAction label="Evolution" icon={<AutorenewIcon />} onClick={() => this.setState({ currentView: Views.Evolution })} />
+        <BottomNavigationAction label="Village"     icon={<HomeIcon />}       onClick={() => this.setState({ currentView: Views.Village })} />
+        <BottomNavigationAction label="Technology"  icon={<BuildIcon />}      onClick={() => this.setState({ currentView: Views.Technology })} />
+        <BottomNavigationAction label="Buildings"   icon={<StoreIcon />}      onClick={() => this.setState({ currentView: Views.Buildings })} />
+        <BottomNavigationAction label="Evolution"   icon={<AutorenewIcon />}  onClick={() => this.setState({ currentView: Views.Evolution })} />
         <BottomNavigationAction disabled />
-        <BottomNavigationAction label="End Turn" icon={<SendIcon style={{ color: 'green' }} />} onClick={this.onEndTurnButtonClicked} />
+        <BottomNavigationAction label="End Turn"    icon={<SendIcon style={{ color: 'green' }} />} onClick={this.onEndTurnButtonClicked} />
       </BottomNavigation>
     )
   }

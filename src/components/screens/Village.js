@@ -13,6 +13,7 @@ const Tile = (props) => {
   )
 }
 
+
 const StatusField = (props) => {
   return (
     <Paper style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>

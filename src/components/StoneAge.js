@@ -2,6 +2,7 @@ import { Game } from 'boardgame.io/core';
 
 import { getCurrentCitizens } from './Utils'
 
+
 const StoneAge = Game({
   setup: () => ({
     maxCitizens: 12,
@@ -9,24 +10,24 @@ const StoneAge = Game({
     resources: {
         food: 0
     },
-    
-    village: {
-        currentCitizens: 8
-    },
+
     agrar: {
       currentCitizens: 0,
       maxCitizens: 10,
       foodProductionFactor: 2.0
     },
 
+    village: {
+      currentCitizens: 8
+    },
+
     factors: {
       foodConsumptionPerCitizen: 1.0
     },
-
     /*
     ich glaube hier die Falsche stelle. Ich will erst alle freigeschalteten Technologieboni addieren bevor sie den wirklichen Faktoren addiert
-    technologybonus:{
-      bonusfoodProductionFactor: 0
+    technologyBonus:{
+      bonusFoodProductionFactor: 0
 
     }
     */
