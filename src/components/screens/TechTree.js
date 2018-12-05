@@ -20,9 +20,15 @@ const Tile = (props) => {
 }
 
 const TechTree = (props) => {
+
+  const data = {
+    G: props.G,
+    unlockFunction: props.moves.unlockTechnology
+  }  
+
   return (
     <Grid container spacing={0}>
-      <Tile toBottom><Tech G={props.G} unlockFunction={props.moves.unlockTechnology} tech={props.G.technologies.gathering} label="gathering"/></Tile>
+      <Tile toBottom><Tech {...data} tech={props.G.technologies.gathering} label="gathering"/></Tile>
       <Tile />
       <Tile />
       <Tile />
@@ -35,7 +41,7 @@ const TechTree = (props) => {
       <Tile />
       <Tile />
 
-      <Tile fromTop toBottom><Tech G={props.G} unlockFunction={props.moves.unlockTechnology} tech={props.G.technologies.plants} label="plants"/></Tile>
+      <Tile fromTop toBottom><Tech {...data} tech={props.G.technologies.plants} label="plants"/></Tile>
       <Tile />
       <Tile><Tech label="use of fire"/></Tile>
       <Tile />

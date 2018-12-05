@@ -7,7 +7,7 @@
 export const technologies = {
 
   gathering: {
-    active: true,
+    active: false,
     cost: 0,
     requirements: [],
     enhancement: (G) => { G.agrar.foodProductionFactor += 1; }
