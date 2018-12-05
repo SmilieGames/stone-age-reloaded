@@ -21,7 +21,15 @@ const StoneAge = Game({
 
     factors: {
       foodConsumptionPerCitizen: 1.0
+    },
+
+    /*
+    ich glaube hier die Falsche stelle. Ich will erst alle freigeschalteten Technologieboni addieren bevor sie den wirklichen Faktoren addiert
+    technologybonus:{
+      bonusfoodProductionFactor: 0
+
     }
+    */
   }),
   moves: {
     addCitizensToAgrar(G, ctx){

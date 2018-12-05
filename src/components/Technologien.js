@@ -6,6 +6,7 @@ class Technologien extends CurrentTechStack{
         let nachfolgertechnologie
         let Beschreibung
         let Auswirkung
+        let Technologiename
     }
 
 
