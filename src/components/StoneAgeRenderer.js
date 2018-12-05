@@ -49,6 +49,8 @@ class StoneAgeRenderer extends Component {
     switch (this.state.currentView) {
       case Views.Village:
         return <Village {...this.props} />
+      default: 
+        return <div/>
     }
   }
 

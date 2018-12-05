@@ -1,7 +1,7 @@
 import { Game } from 'boardgame.io/core';
 
 import { getCurrentCitizens } from './Utils'
-
+import AgrarMoves from './moves/AgrarMoves'
 
 const StoneAge = Game({
   setup: () => ({
@@ -33,18 +33,8 @@ const StoneAge = Game({
     */
   }),
   moves: {
-    addCitizensToAgrar(G, ctx){
-      if(G.agrar.currentCitizens < G.agrar.maxCitizens && G.village.currentCitizens > 0){
-        G.agrar.currentCitizens++;
-        G.village.currentCitizens--;
-      }
-    },
-    removeCitizensFromAgrar(G, ctx){
-      if(G.agrar.currentCitizens > 0){
-        G.agrar.currentCitizens--;
-        G.village.currentCitizens++;
-      }
-    },
+    ...AgrarMoves,
+    
     calculate(G, ctx){
 
       // food production
