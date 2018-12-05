@@ -30,3 +30,20 @@
     transform: rotate(360deg);
   }
 }
+
+.fromTop {
+  border-left: 6px solid black;
+  height: 2vh;
+  position: absolute;
+  margin-left: 4%;
+  z-index: -1;
+}
+
+.toBottom {
+  border-left: 6px solid black;
+  height: 9vh;
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 4%;
+  z-index: -1;
+}
