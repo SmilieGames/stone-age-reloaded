@@ -7,14 +7,16 @@
 export const technologies = {
 
   gathering: {
-    active: false,
+    active: true,
     cost: 0,
-    requirements: []
+    requirements: [],
+    enhancement: (G) => { G.agrar.foodProductionFactor += 1; }
   },
   plants: {
     active: false,
     cost: 100,
-    requirements: ['gathering']
+    requirements: ['gathering'],
+    enhancement: (G) => { G.agrar.foodProductionFactor += 2; }
   },
   advancedGathering: {
     active: false,
@@ -27,6 +29,6 @@ export const technologies = {
 export const TechMoves = {
   unlockTechnology(G, ctx, tech){
     G.technologies[tech].active = true;
+    G.technologies[tech].enhancement(G);
   }
-
 };

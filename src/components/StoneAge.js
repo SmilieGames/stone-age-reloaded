@@ -11,7 +11,7 @@ const StoneAge = Game({
     resources: {
         food: 0,
         //TODO: new ressources added but not linked
-        researchPoints: 0,
+        researchPoints: 100, // TESTING
         culture: 0,
         production: 0
     },

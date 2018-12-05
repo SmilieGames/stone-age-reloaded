@@ -68,7 +68,7 @@ class Tech extends React.Component {
 
   render(){
     return (  
-      <Button disabled={this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+      <Button disabled={!this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
           {this.props.label}
       </Button>
     )    
@@ -91,7 +91,7 @@ const TechTree = (props) => {
       <Tile />
       <Tile />
 
-      <Tile fromTop toBottom><Tech G={props.G} tech={props.G.technologies.plants} label="plants"/></Tile>
+      <Tile fromTop toBottom><Tech G={props.G} unlockFunction={props.moves.unlockTechnology} tech={props.G.technologies.plants} label="plants"/></Tile>
       <Tile />
       <Tile><Tech label="use of fire"/></Tile>
       <Tile />
