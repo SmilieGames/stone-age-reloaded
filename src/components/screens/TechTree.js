@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
 
 const Tile = (props) => {
   return (
-    <Grid item xs={1} style={{ height: '10vh', backgroundColor: 'lightGray', zIndex: '-1' }}>
+    <Grid item xs={1} style={{ height: '10vh', backgroundColor: ''}}>
       {!!props.fromTop && (
         <div className="fromTop"/>
       )}
@@ -19,20 +19,66 @@ const Tile = (props) => {
   )
 }
 
-const Tech= (props) => {
-  return (  
-    <Paper style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
-      <Typography variant="body" gutterBottom>
-        {props.label}
-      </Typography>      
-    </Paper>
-  )
+class Tech extends React.Component {
+
+  constructor(props){
+    super(props);
+
+    this.unlockTechnology = this.unlockTechnology.bind(this);
+    this.isClickable = this.isClickable.bind(this);
+    this.isActive = this.isActive.bind(this);
+    this.requirementsMet = this.requirementsMet.bind(this);
+    this.enoughResearchPoints = this.enoughResearchPoints.bind(this);
+  }
+
+  isClickable(){
+    if(!!this.props.tech){
+      if(!this.isActive() && this.requirementsMet() && this.enoughResearchPoints()){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  }
+
+  isActive(){
+    return this.props.tech.active;
+  }
+
+  requirementsMet(){
+    this.props.tech.requirements.forEach((req) => {
+      if(!this.props.G.technologies[req].active){
+        return false;
+      }
+    })
+    return true;
+  }
+
+  enoughResearchPoints(){
+    if(this.props.G.resources.researchPoints >= this.props.tech.cost){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  unlockTechnology(){
+    this.props.unlockFunction(this.props.label)
+  }
+
+  render(){
+    return (  
+      <Button disabled={this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+          {this.props.label}
+      </Button>
+    )    
+  }
 }
 
 const TechTree = (props) => {
   return (
     <Grid container spacing={0}>
-      <Tile toBottom><Tech label="gathering"/></Tile>
+      <Tile toBottom><Tech G={props.G} unlockFunction={props.moves.unlockTechnology} tech={props.G.technologies.gathering} label="gathering"/></Tile>
       <Tile />
       <Tile />
       <Tile />
@@ -45,7 +91,7 @@ const TechTree = (props) => {
       <Tile />
       <Tile />
 
-      <Tile fromTop toBottom><Tech label="plants"/></Tile>
+      <Tile fromTop toBottom><Tech G={props.G} tech={props.G.technologies.plants} label="plants"/></Tile>
       <Tile />
       <Tile><Tech label="use of fire"/></Tile>
       <Tile />

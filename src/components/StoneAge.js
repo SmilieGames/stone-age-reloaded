@@ -2,6 +2,7 @@ import { Game } from 'boardgame.io/core';
 
 import { getCurrentCitizens } from './Utils'
 import VillageMoves from './moves/VillageMoves'
+import { TechMoves, technologies } from './moves/TechMoves'
 
 const StoneAge = Game({
   setup: () => ({
@@ -9,8 +10,8 @@ const StoneAge = Game({
 
     resources: {
         food: 0,
-        // new ressources added but not linked
-        reseachPoints: 0,
+        //TODO: new ressources added but not linked
+        researchPoints: 0,
         culture: 0,
         production: 0
     },
@@ -20,13 +21,13 @@ const StoneAge = Game({
       maxCitizens: 10,
       foodProductionFactor: 2.0
     },
-    // new Object Mining added but not linked
+    //TODO: new Object Mining added but not linked
     mining:{
       currentCitizens: 0,
       maxCitizens: 0,
       productionProductionFactor: 2.0
     },
-    // new Object religion added but not linked
+    //TODO: new Object religion added but not linked
     religion:{
       currentCitizens: 0,
       maxCitizens: 0,
@@ -38,6 +39,8 @@ const StoneAge = Game({
       //tbd productionFactor e.g. military
     },
 
+    technologies,
+
     factors: {
       foodConsumptionPerCitizen: 1.0
     },
@@ -45,6 +48,7 @@ const StoneAge = Game({
   }),
   moves: {
     ...VillageMoves,
+    ...TechMoves,
     // wird zu ...VillageMoves
     
     calculate(G, ctx){
