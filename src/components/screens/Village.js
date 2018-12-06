@@ -51,7 +51,7 @@ class StatusField extends React.Component {
 
 const Village = (props) => {
   return (
-    <Grid style={{ backgroundColor: 'lightGray' }} container spacing={0}>
+    <Grid style={{ backgroundColor: 'lightGray', height: '600px', width: '1900px' }} container spacing={0}>
       <Tile />
       <Tile>
         <StatusField 

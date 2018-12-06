@@ -96,7 +96,7 @@ class StoneAgeRenderer extends Component {
 
         {this.renderTopBar()}
 
-        <div style={{ height: '60vh' }}>
+        <div style={{ height: '60vh', overflowX: 'scroll', overflowY: 'scroll' }}>
           {this.renderScreen()}
         </div>
 
