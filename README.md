@@ -11,8 +11,16 @@ This game is a work in progress and is definetely not playable yet. But we are w
 ## Checklist:
 
 - [ ] Basic economy (food gathering, building a population and needs)
+  - [X] Economy framework
+  - [ ] Connect all food gathering objects to store
 - [ ] Resource mining
-- [ ] Culture and Technology (sub points coming soon)
+  - [ ] Connect all resource mining objects to store
+  - [ ] Connect all culture generating objects to store
+- [ ] Culture and Technology
+  - [X] Create tech tree UI
+  - [X] Create techtree framework and data structure
+  - [ ] Create all tech data
 - [ ] Fight mechanics
 - [ ] Evolution (WIP)
 - [ ] Win conditions (and statistics for game?)
+- [ ] UI Overhaul (create assets and make it fancy)
