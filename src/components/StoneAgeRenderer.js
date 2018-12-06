@@ -64,7 +64,7 @@ class StoneAgeRenderer extends Component {
           <TextField
             id="outlined-name"
             label="Population / Max Population"
-            value={ getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens}
+            value={ getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens }
             margin="normal"
             variant="outlined"
           />

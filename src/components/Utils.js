@@ -12,3 +12,15 @@ export function getCurrentCitizens(G){
 
   return currentCitizens;
 }
+
+export function calculateFoodProduction(G){
+  let foodProduction = 0;
+
+  for(var key in G){
+    if(G[key].foodProductionFactor != null){
+      foodProduction += G[key].foodProductionFactor * G[key].currentCitizens;
+    }
+  }
+
+  return foodProduction;
+}

@@ -1,6 +1,6 @@
 import { Game } from 'boardgame.io/core';
 
-import { getCurrentCitizens } from './Utils'
+import * as Utils from './Utils'
 import VillageMoves from './moves/VillageMoves'
 import { TechMoves, technologies } from './moves/TechMoves'
 
@@ -63,7 +63,7 @@ const StoneAge = Game({
     calculate(G, ctx){
 
       // food production
-      G.resources.food = G.resources.food + G.agrar.currentCitizens * G.agrar.foodProductionFactor;
+      G.resources.food += Utils.calculateFoodProduction(G);
 
       // food consumption (adjusted for new citizens)
       for(var key in G){
@@ -80,7 +80,7 @@ const StoneAge = Game({
       }
       
       // add people if food is left
-      while(G.resources.food >= 10 && getCurrentCitizens(G) < G.maxCitizens){
+      while(G.resources.food >= 10 && Utils.getCurrentCitizens(G) < G.maxCitizens){
         G.resources.food -= 10;
         G.village.currentCitizens++;
       }
