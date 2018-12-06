@@ -16,7 +16,7 @@ import SendIcon from '@material-ui/icons/Send'
 import Village from './screens/Village'
 import TechTree from './screens/TechTree'
 
-import {getCurrentCitizens} from './Utils'
+import * as Utils from './Utils'
 
 // Constants for the currently shown view (the indexes are used by the bottom navigation)
 const Views = {
@@ -64,7 +64,7 @@ class StoneAgeRenderer extends Component {
           <TextField
             id="outlined-name"
             label="Population / Max Population"
-            value={ getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens }
+            value={ Utils.getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens + " (" + Utils.estimatedCitizenGrowth(this.props.G) + ")" }
             margin="normal"
             variant="outlined"
           />

@@ -35,3 +35,21 @@ export function calculateFoodProduction(G){
 
   return foodProduction;
 }
+
+// calculate, by how much your population will grow or shrink
+export function estimatedCitizenGrowth(G){
+  const foodProduction = calculateFoodProduction(G);
+  const currentCitizens = getCurrentCitizens(G);
+  const currentFood = G.resources.food;
+
+  // we need to handle the two cases if we have a positive or negative factor, as the factors differ for both cases
+  const foodConsumption = currentCitizens * G.factors.foodConsumptionPerCitizen
+
+  // if we dont have enough food for everyone, the population will shrink by this factor
+  if(currentFood + foodProduction - foodConsumption <= 0){
+    return currentFood + foodProduction - foodConsumption;
+  // we dont look at the currentFood for the population growth
+  }else{
+    return "+" + (foodProduction - foodConsumption) / 10.0;
+  }
+}
