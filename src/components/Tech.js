@@ -16,7 +16,7 @@ export default class Tech extends React.Component {
   }
 
   isClickable(){
-    if(!!this.props.tech){      console.log(this.props.tech, this.requirementsMet())
+    if(!!this.props.tech){
       if(!this.isActive() && this.requirementsMet() && this.enoughResearchPoints()){
         return true;
       }else{
@@ -36,7 +36,7 @@ export default class Tech extends React.Component {
     this.props.tech.requirements.forEach((req) => {
       if(!this.props.G.technologies[req].active){
         met = false;
-        return false;
+        return false; // this only breaks the anonymous functions in the forEach
       }
     })
     return met;
