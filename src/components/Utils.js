@@ -1,3 +1,13 @@
+/**
+ * 
+ * 
+ * 
+ * MAKE SURE THAT NO FUNCTIONS IN THIS FILE ALTER THE GAME STATE IN ANY WAY!
+ * 
+ * 
+ * 
+ */
+
 
 // calculate the current citizens from the current game state
 export function getCurrentCitizens(G){
@@ -13,6 +23,7 @@ export function getCurrentCitizens(G){
   return currentCitizens;
 }
 
+// calculate the food production for this round
 export function calculateFoodProduction(G){
   let foodProduction = 0;
 

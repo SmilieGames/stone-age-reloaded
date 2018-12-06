@@ -24,17 +24,17 @@ export const technologies = {
   },
   advancedGathering: {
     label: 'Advanced Gathering',
-    description: '',
+    description: 'Fruits can hold 30 people more',
     active: false,
     cost: 200,
     requirements: ['plants'],
-    enhancement: (G) => { G.fruits.foodProductionFactor += 2; }
-  }  
+    enhancement: (G) => { G.fruits.maxCitizens += 30; }
+  }
 }
-      
+
 
 export const TechMoves = {
-  unlockTechnology(G, ctx, tech){console.log(tech)
+  unlockTechnology(G, ctx, tech){
     G.technologies[tech].active = true;
     G.technologies[tech].enhancement(G);
   }

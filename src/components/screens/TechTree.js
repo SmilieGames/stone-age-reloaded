@@ -12,6 +12,9 @@ const Tile = (props) => {
   )
 }
 
+/**
+ * The tech tree is a 12x7 Grid of Tiles. Each Tile can contain one tech.
+ */
 const TechTree = (props) => {
 
   const data = {
