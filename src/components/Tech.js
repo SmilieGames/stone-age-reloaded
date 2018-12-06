@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 
 export default class Tech extends React.Component {
@@ -16,7 +18,9 @@ export default class Tech extends React.Component {
   }
 
   isClickable(){
-    if(!!this.props.tech){
+    const { technologies, tech } = this.props;
+
+    if(!!technologies[tech]){
       if(!this.isActive() && this.requirementsMet() && this.enoughResearchPoints()){
         return true;
       }else{
@@ -28,13 +32,16 @@ export default class Tech extends React.Component {
   }
 
   isActive(){
-    return this.props.tech.active;
+    const { technologies, tech } = this.props;
+    return technologies[tech].active;
   }
 
   requirementsMet(){
+    const { technologies, tech } = this.props;
+
     let met = true;
-    this.props.tech.requirements.forEach((req) => {
-      if(!this.props.G.technologies[req].active){
+    technologies[tech].requirements.forEach((req) => {
+      if(!technologies[req].active){
         met = false;
         return false; // this only breaks the anonymous functions in the forEach
       }
@@ -43,7 +50,9 @@ export default class Tech extends React.Component {
   }
 
   enoughResearchPoints(){
-    if(this.props.G.resources.researchPoints >= this.props.tech.cost){
+    const { technologies, tech } = this.props;
+
+    if(this.props.G.resources.researchPoints >= technologies[tech].cost){
       return true;
     }else{
       return false;
@@ -51,14 +60,29 @@ export default class Tech extends React.Component {
   }
 
   unlockTechnology(){
-    this.props.unlockFunction(this.props.label)
+    const { tech } = this.props;
+
+    this.props.unlockFunction(tech)
   }
 
   render(){
-    return (  
-      <Button disabled={!this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
-          {this.props.label}
-      </Button>
+    const { technologies, tech } = this.props;
+
+    if(!technologies || !tech){
+      return(
+        <Button variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+            {tech}
+        </Button>
+      )
+    }console.log(technologies, tech)
+    return (
+      <Tooltip title={technologies[tech].description}>
+        <span>
+          <Button disabled={!this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+              {(technologies[tech]? technologies[tech].label : tech)}
+          </Button>
+        </span>
+      </Tooltip>
     )    
   }
 }

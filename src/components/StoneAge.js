@@ -16,19 +16,28 @@ const StoneAge = Game({
         production: 0
     },
 
+    fruits: {
+      active: false,
+      currentCitizens: 0,
+      maxCitizens: 12,
+      foodProductionFactor: 2.0
+    },
     agrar: {
+      active: false,
       currentCitizens: 0,
       maxCitizens: 10,
       foodProductionFactor: 2.0
     },
     //TODO: new Object Mining added but not linked
     mining:{
+      active: false,
       currentCitizens: 0,
       maxCitizens: 0,
       productionProductionFactor: 2.0
     },
     //TODO: new Object religion added but not linked
     religion:{
+      active: false,
       currentCitizens: 0,
       maxCitizens: 0,
       religionProductionFactor: 2.0

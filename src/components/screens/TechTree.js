@@ -16,12 +16,13 @@ const TechTree = (props) => {
 
   const data = {
     G: props.G,
-    unlockFunction: props.moves.unlockTechnology
+    unlockFunction: props.moves.unlockTechnology,
+    technologies: props.G.technologies
   }  
 
   return (
     <Grid container spacing={0} style={{ backgroundColor: 'lightGray', height: '600px', width: '1900px' }}>
-      <Tile ><Tech {...data} tech={props.G.technologies.gathering} label="gathering"/></Tile>
+      <Tile ><Tech {...data} tech="gathering"/></Tile>
       <Tile />
       <Tile />
       <Tile />
@@ -34,7 +35,7 @@ const TechTree = (props) => {
       <Tile />
       <Tile />
 
-      <Tile  ><Tech {...data} tech={props.G.technologies.plants} label="plants"/></Tile>
+      <Tile  ><Tech {...data} tech="plants"/></Tile>
       <Tile />
       <Tile><Tech label="use of fire"/></Tile>
       <Tile />
@@ -47,7 +48,7 @@ const TechTree = (props) => {
       <Tile />
       <Tile />
 
-      <Tile  ><Tech label="advanced gathering"/></Tile>
+      <Tile  ><Tech {...data} tech="advancedGathering"/></Tile>
       <Tile ><Tech label="religion"/></Tile>
       <Tile />
       <Tile ><Tech label="buidling of fire"/></Tile>

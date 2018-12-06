@@ -26,7 +26,7 @@ class StatusField extends React.Component {
 
   render() {    
     return (
-      <Paper style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+      <Paper hidden={!this.props.visible} style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
         <Typography variant="h5" gutterBottom>
           {this.props.label}
         </Typography>
@@ -58,6 +58,7 @@ const Village = (props) => {
           label="Agrar" 
           currentCitizens={props.G.agrar.currentCitizens} 
           maxCitizen={props.G.agrar.maxCitizens}
+          visible={props.G.agrar.active}
           removeFunction={props.moves.removeCitizens}
           addFunction={props.moves.addCitizens}
           station="agrar"/>
@@ -69,7 +70,14 @@ const Village = (props) => {
 
       <Tile />
       <Tile>
-        <StatusField label="Fruits"/>
+        <StatusField 
+          label="Fruits" 
+          currentCitizens={props.G.fruits.currentCitizens} 
+          maxCitizen={props.G.fruits.maxCitizens}
+          visible={props.G.fruits.active}
+          removeFunction={props.moves.removeCitizens}
+          addFunction={props.moves.addCitizens}
+          station="fruits"/>
       </Tile>
       <Tile />
       <Tile>
@@ -77,7 +85,11 @@ const Village = (props) => {
       </Tile>
 
       <Tile>
-        <StatusField label="Village" currentCitizens={props.G.village.currentCitizens}/>
+        <StatusField
+          label="Village" 
+          currentCitizens={props.G.village.currentCitizens}
+          visible={true}
+          station="village"/>
       </Tile>
       <Tile>
         <StatusField label="Fishing"/>
