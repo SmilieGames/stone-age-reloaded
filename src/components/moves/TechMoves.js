@@ -92,14 +92,91 @@ export const technologies = {
     description: 'Population 100 max',
     active: false,
     cost: 200,
-    requirements: ['useOfFire'],
-    enhancement: (G) => { G.maxCitizens == 100; }
+    requirements: ['buildingOfFire'],
+    enhancement: (G) => { G.maxCitizens = 100; }
   },
+  pottery: {
+    label: 'Pottery',
+    description: 'Population +400 max',
+    active: false,
+    cost: 200,
+    requirements: ['shelter'],
+    enhancement: (G) => { G.maxCitizens += 400; }
+  },
+  architecture: {
+    label: 'Architecture',
+    description: 'Population +200 max, unlocks building `megalith`',
+    active: false,
+    cost: 200,
+    requirements: ['shelter', 'componentTools'],
+    enhancement: (G) => { G.maxCitizens += 200; }
+  },
+
+  crudeStoneTools: {
+    label: 'Crude Stone Tools',
+    description: 'Unlocks mining. 5 citizen max, +3 stone / citizen. Unlocks building `dwelling`',
+    active: false,
+    cost: 200,
+    requirements: [],
+    enhancement: (G) => { G.mining.active = true; }
+  },
+  furClothing: {
+    label: 'Fur Clothing',
+    description: 'Population +10',
+    active: false,
+    cost: 200,
+    requirements: ['crudeStoneTools'],
+    enhancement: (G) => { G.maxCitizens += 10; }
+  },
+  clothOutfit: {
+    label: 'Cloth Outfit',
+    description: 'Population +1000 max',
+    active: false,
+    cost: 200,
+    requirements: ['furClothing'],
+    enhancement: (G) => { G.maxCitizens += 1000; }
+  },
+  improvedStoneTools: {
+    label: 'Improved Stonetools',
+    description: 'Mining +10 citizen max, unlocks `workshop`',
+    active: false,
+    cost: 200,
+    requirements: ['crudeStoneTools'],
+    enhancement: (G) => { G.mining.maxCitizens += 10; }
+  },
+  advancedStoneTools: {
+    label: 'Advanced Stonetools',
+    description: 'Mining +10 citizen max',
+    active: false,
+    cost: 200,
+    requirements: ['improvedStoneTools'],
+    enhancement: (G) => { G.maxCitizens += 10; }
+  },  
+  componentTools: {
+    label: 'Component Tools',
+    description: 'Mining +174 citizen max, unlocks palisades',
+    active: false,
+    cost: 200,
+    requirements: ['advancedStoneTools'],
+    enhancement: (G) => { G.maxCitizens += 174; }
+  },
+
+  palace: {
+    label: 'Palace',
+    description: 'Unlocks `palace` and possibility to win the game',
+    active: false,
+    cost: 200,
+    requirements: ['architecture', 'barter'],
+    enhancement: (G) => { /** TODO */ }
+  },
+  
+  
 }
 
 
 export const TechMoves = {
   unlockTechnology(G, ctx, tech){
+    G.resources.researchPoints -= G.technologies[tech].cost;
     G.technologies[tech].active = true;
     G.technologies[tech].enhancement(G);
   }

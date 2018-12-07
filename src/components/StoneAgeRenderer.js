@@ -67,6 +67,23 @@ class StoneAgeRenderer extends Component {
             value={ Utils.getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens + " (" + Utils.estimatedCitizenGrowth(this.props.G) + ")" }
             margin="normal"
             variant="outlined"
+            style={{paddingRight: '10px'}}
+          />
+          <TextField
+            id="outlined-name"
+            label="Resources"
+            value={ this.props.G.resources.production }
+            margin="normal"
+            variant="outlined"
+            style={{paddingRight: '10px'}}
+          />
+          <TextField
+            id="outlined-name"
+            label="Research Points"
+            value={ this.props.G.resources.researchPoints }
+            margin="normal"
+            variant="outlined"
+            style={{paddingRight: '10px'}}
           />
         </Toolbar>
       </AppBar>

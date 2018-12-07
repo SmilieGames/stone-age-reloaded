@@ -85,13 +85,13 @@ export default class Tech extends React.Component {
   render(){
     const { technologies, tech } = this.props;
 
-    if(!technologies || !tech){
+    if(!technologies[tech]){
       return(
         <Button variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
-            {this.props.label}
+            {this.props.tech}
         </Button>
       )
-    }console.log(technologies, tech)
+    }
     return (
       <Tooltip title={technologies[tech].description}>
         <div>

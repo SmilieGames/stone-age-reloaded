@@ -30,76 +30,76 @@ const TechTree = (props) => {
       <Tile/>
       <Tile/>
       <Tile/>
-      <Tile><Tech label="crude stone tools"/></Tile>
+      <Tile><Tech {...data} tech="crudeStoneTools"/></Tile>
       <Tile/>
       <Tile/>
-      <Tile><Tech label="hunting"/></Tile>
+      <Tile><Tech {...data} tech="hunting"/></Tile>
       <Tile/>
       <Tile/>
       <Tile/>
 
       <Tile><Tech {...data} tech="plants"/></Tile>
       <Tile/>
-      <Tile><Tech label="use of fire"/></Tile>
+      <Tile><Tech {...data} tech="useOfFire"/></Tile>
       <Tile/>
-      <Tile><Tech label="fur clothing"/></Tile>
+      <Tile><Tech {...data} tech="furClothing"/></Tile>
       <Tile/>
-      <Tile><Tech label="improved stone tools"/></Tile>
-      <Tile><Tech label="primitive weapons"/></Tile>
+      <Tile><Tech {...data} tech="improvedStoneTools"/></Tile>
+      <Tile><Tech {...data} tech="primitiveWeapons"/></Tile>
       <Tile/>
       <Tile/>
       <Tile/>
       <Tile/>
 
       <Tile><Tech {...data} tech="advancedGathering"/></Tile>
-      <Tile><Tech label="religion"/></Tile>
+      <Tile><Tech {...data} tech="science"/></Tile>
       <Tile/>
-      <Tile><Tech label="buidling of fire"/></Tile>
-      <Tile/>
-      <Tile/>
-      <Tile/>
-      <Tile><Tech label="thrown weapons"/></Tile>
-      <Tile><Tech label="trapping"/></Tile>
-      <Tile><Tech label="fishing"/></Tile>
-      <Tile/>
-      <Tile/>
-
-      <Tile/>
-      <Tile><Tech label="art"/></Tile>
-      <Tile/>
-      <Tile><Tech label="shelter"/></Tile>
-      <Tile/>
-      <Tile/>
-      <Tile><Tech label="advanced stone tools"/></Tile>
-      <Tile/>
-      <Tile><Tech label="captive animals"/></Tile>
+      <Tile><Tech {...data} tech="buildingOfFire"/></Tile>
       <Tile/>
       <Tile/>
       <Tile/>
-
-      <Tile><Tech label="agriculture"/></Tile>
-      <Tile><Tech label="adorment"/></Tile>
-      <Tile><Tech label="pottery"/></Tile>
-      <Tile><Tech label="architecture"/></Tile>
-      <Tile><Tech label="cloth outfit"/></Tile>
-      <Tile/>
-      <Tile><Tech label="component tools"/></Tile>
-      <Tile><Tech label="ranged weapons"/></Tile>
-      <Tile><Tech label="domest."/></Tile>
-      <Tile><Tech label="fish hooks"/></Tile>
+      <Tile><Tech {...data} tech="thrownWeapons"/></Tile>
+      <Tile><Tech {...data} tech="trapping"/></Tile>
+      <Tile><Tech {...data} tech="fishing"/></Tile>
       <Tile/>
       <Tile/>
 
       <Tile/>
-      <Tile><Tech label="barter"/></Tile>
+      <Tile><Tech {...data} tech="art"/></Tile>
+      <Tile/>
+      <Tile><Tech {...data} tech="shelter"/></Tile>
       <Tile/>
       <Tile/>
-      <Tile><Tech label="PALACE"/></Tile>
+      <Tile><Tech {...data} tech="advancedStoneTools"/></Tile>
+      <Tile/>
+      <Tile><Tech {...data} tech="captiveAnimals"/></Tile>
       <Tile/>
       <Tile/>
       <Tile/>
-      <Tile><Tech label="animal husbandry"/></Tile>
-      <Tile><Tech label="fishing nets"/></Tile>
+
+      <Tile><Tech {...data} tech="agriculture"/></Tile>
+      <Tile><Tech {...data} tech="advancedScience"/></Tile>
+      <Tile><Tech {...data} tech="pottery"/></Tile>
+      <Tile><Tech {...data} tech="architecture"/></Tile>
+      <Tile><Tech {...data} tech="clothOutfit"/></Tile>
+      <Tile/>
+      <Tile><Tech {...data} tech="componentTools"/></Tile>
+      <Tile><Tech {...data} tech="rangedWeapons"/></Tile>
+      <Tile><Tech {...data} tech="domestication"/></Tile>
+      <Tile><Tech {...data} tech="fishHooks"/></Tile>
+      <Tile/>
+      <Tile/>
+
+      <Tile/>
+      <Tile><Tech {...data} tech="barter"/></Tile>
+      <Tile/>
+      <Tile/>
+      <Tile><Tech {...data} tech="PALACE"/></Tile>
+      <Tile/>
+      <Tile/>
+      <Tile/>
+      <Tile><Tech {...data} tech="animalHusbandry"/></Tile>
+      <Tile><Tech {...data} tech="fishingNets"/></Tile>
       <Tile/>
       <Tile/>
       
