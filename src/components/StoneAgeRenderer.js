@@ -100,7 +100,14 @@ class StoneAgeRenderer extends Component {
         <BottomNavigationAction label="Technology"  icon={<BuildIcon />}      onClick={() => this.setState({ currentView: Views.Technology })} />
         <BottomNavigationAction label="Buildings"   icon={<StoreIcon />}      onClick={() => this.setState({ currentView: Views.Buildings })} />
         <BottomNavigationAction label="Evolution"   icon={<AutorenewIcon />}  onClick={() => this.setState({ currentView: Views.Evolution })} />
-        <BottomNavigationAction disabled />
+        <BottomNavigationAction label={<TextField
+            id="outlined-name"
+            label="Turn"
+            value={ this.props.ctx.turn + " / 100" }
+            margin="normal"
+            variant="outlined"
+            style={{margin: '-20px'}}
+          />} />
         <BottomNavigationAction label="End Turn"    icon={<SendIcon style={{ color: 'green' }} />} onClick={this.onEndTurnButtonClicked} />
       </BottomNavigation>
     )
