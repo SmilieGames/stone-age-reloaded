@@ -6,20 +6,22 @@ In this game you are the leader of an acient tribe and your only goal is to buil
 
 ## Notes
 
-This game is a work in progress and is definetely not playable yet. But we are working hard to create all the neccessary assets and game logics as fast as possible.
+Eventhough this game is playable it is missing some core features, such as buildings, fighting and (maybe most importantly) win conditions. Those will follow over the next few days.
 
 ## Checklist:
 
-- [ ] Basic economy (food gathering, building a population and needs)
+- [X] Basic economy (food gathering, building a population and needs)
   - [X] Economy framework
-  - [ ] Connect all food gathering objects to store
-- [ ] Resource mining
-  - [ ] Connect all resource mining objects to store
-  - [ ] Connect all culture generating objects to store
+  - [X] Connect all food gathering objects to store
+- [X] Resource mining
+  - [X] Connect all resource mining objects to store
+  - [X] Connect all culture generating objects to store
 - [ ] Culture and Technology
   - [X] Create tech tree UI
   - [X] Create techtree framework and data structure
-  - [ ] Create all tech data
+  - [X] Create all tech data
+  - [ ] Balance techs
+- [ ] Add buildings
 - [ ] Fight mechanics
 - [ ] Evolution (WIP)
 - [ ] Win conditions (and statistics for game?)
