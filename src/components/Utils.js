@@ -57,30 +57,4 @@ export function estimatedCitizenGrowth(G){
   }else{
     return "+" + (foodProduction - foodConsumption) / 10.0;
   }
-  
-
-  //if(foodConsumption >= totalFood){
-  if(totalFood - foodConsumption > 0){
-    return totalFood - foodConsumption;
-  }else{
-    return "+" + (foodProduction - foodConsumption) / 10.0;
-  }
-
-  // if we dont have enough food for everyone, the population will shrink by this factor
-  if(foodProduction - foodConsumption < 0){
-    if(currentFood > currentCitizens){
-      return 0;
-    }else{
-      return currentFood - currentCitizens;
-    }
-  }else{
-    return "+" + (foodProduction - foodConsumption) / 10.0;
-  }
-
-  if(currentFood + foodProduction - foodConsumption <= 0){
-    return currentFood + foodProduction - foodConsumption;
-  // we dont look at the currentFood for the population growth
-  }else{
-    return "+" + (foodProduction - foodConsumption) / 10.0;
-  }
 }
