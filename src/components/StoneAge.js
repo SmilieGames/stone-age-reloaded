@@ -56,7 +56,7 @@ const StoneAge = Game({
 
     factors: {
       foodConsumptionPerCitizen: 1.0,
-      researchPassiveProduction: 15,
+      researchPassiveProduction: 20,
       productionPassiveProduction: 2
     },
 

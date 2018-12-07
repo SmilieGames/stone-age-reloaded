@@ -64,7 +64,7 @@ class StoneAgeRenderer extends Component {
           <TextField
             id="outlined-name"
             label="Population / Max Population"
-            value={ Utils.getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens + " (" + Utils.estimatedCitizenGrowth(this.props.G) + ")" }
+            value={ Utils.getCurrentCitizens(this.props.G) + " / " + this.props.G.maxCitizens + " ( " + Utils.estimatedCitizenGrowth(this.props.G) + ")" }
             margin="normal"
             variant="outlined"
             style={{paddingRight: '10px'}}
@@ -72,7 +72,7 @@ class StoneAgeRenderer extends Component {
           <TextField
             id="outlined-name"
             label="Resources"
-            value={ this.props.G.resources.production }
+            value={ this.props.G.resources.production + " ( +" + Utils.calculateProductionProduction(this.props.G) + ")" }
             margin="normal"
             variant="outlined"
             style={{paddingRight: '10px'}}
@@ -80,7 +80,7 @@ class StoneAgeRenderer extends Component {
           <TextField
             id="outlined-name"
             label="Research Points"
-            value={ this.props.G.resources.researchPoints }
+            value={ this.props.G.resources.researchPoints + " ( +" + Utils.calculateResearchProduction(this.props.G) + ")" }
             margin="normal"
             variant="outlined"
             style={{paddingRight: '10px'}}
@@ -120,7 +120,7 @@ class StoneAgeRenderer extends Component {
 
         {this.renderTopBar()}
 
-        <div style={{ height: '60vh', overflowX: 'scroll', overflowY: 'scroll' }}>
+        <div style={{ height: '65vh', overflowX: 'scroll', overflowY: 'scroll' }}>
           {this.renderScreen()}
         </div>
 

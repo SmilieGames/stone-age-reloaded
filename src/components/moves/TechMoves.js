@@ -26,7 +26,7 @@ export const technologies = {
     label: 'Advanced Gathering',
     description: '`Fruits` can hold 30 people more',
     active: false,
-    cost: 200,
+    cost: 500,
     requirements: ['plants'],
     enhancement: (G) => { G.fruits.maxCitizens += 30; }
   },
@@ -34,7 +34,7 @@ export const technologies = {
     label: 'Agriculture',
     description: 'Unlocks `Agrar`. 200 Citizen max, +2 food prduction / citizen',
     active: false,
-    cost: 200,
+    cost: 1000,
     requirements: ['advancedGathering'],
     enhancement: (G) => { G.agrar.active = true; G.agrar.maxCitizens = 50; }
   },
@@ -67,7 +67,7 @@ export const technologies = {
     label: 'Art',
     description: 'Research +15 citizen max',
     active: false,
-    cost: 200,
+    cost: 500,
     requirements: ['science'],
     enhancement: (G) => { G.research.maxCitizens += 15; }
   },
@@ -75,7 +75,7 @@ export const technologies = {
     label: 'Advanced Science',
     description: 'Research + 50 citizen max',
     active: false,
-    cost: 200,
+    cost: 1000,
     requirements: ['art'],
     enhancement: (G) => { G.research.maxCitizens += 50; }
   },
@@ -91,7 +91,7 @@ export const technologies = {
     label: 'Shelter',
     description: 'Population 100 max',
     active: false,
-    cost: 200,
+    cost: 500,
     requirements: ['buildingOfFire'],
     enhancement: (G) => { G.maxCitizens = 100; }
   },
@@ -116,7 +116,7 @@ export const technologies = {
     label: 'Crude Stone Tools',
     description: 'Unlocks mining. 5 citizen max, +3 stone / citizen. Unlocks building `dwelling`',
     active: false,
-    cost: 200,
+    cost: 100,
     requirements: [],
     enhancement: (G) => { G.mining.active = true; }
   },
@@ -150,7 +150,7 @@ export const technologies = {
     active: false,
     cost: 200,
     requirements: ['improvedStoneTools'],
-    enhancement: (G) => { G.maxCitizens += 10; }
+    enhancement: (G) => { G.mining.maxCitizens += 10; }
   },  
   componentTools: {
     label: 'Component Tools',
@@ -158,7 +158,7 @@ export const technologies = {
     active: false,
     cost: 200,
     requirements: ['advancedStoneTools'],
-    enhancement: (G) => { G.maxCitizens += 174; }
+    enhancement: (G) => { G.mining.maxCitizens += 174; }
   },
 
   palace: {
@@ -174,7 +174,7 @@ export const technologies = {
     label: 'Hunting',
     description: 'Unlocks `hunting`. 5 citizen max, 3 food per citizen',
     active: false,
-    cost: 200,
+    cost: 100,
     requirements: [],
     enhancement: (G) => { /** TODO */ }
   },
