@@ -36,6 +36,31 @@ export function calculateFoodProduction(G){
   return foodProduction;
 }
 
+// calculate the food production for this round
+export function calculateProductionProduction(G){
+  let prductionProduction = G.factors.productionPassiveProduction;
+
+  for(var key in G){
+    if(G[key].productionProductionFactor != null){
+      prductionProduction += G[key].productionProductionFactor * G[key].currentCitizens;
+    }
+  }
+
+  return prductionProduction;
+}
+
+// calculate the food production for this round
+export function calculateResearchProduction(G){
+  let researchProduction = G.factors.researchPassiveProduction;
+
+  for(var key in G){
+    if(G[key].researchProductionFactor != null){
+      researchProduction += G[key].researchProductionFactor * G[key].currentCitizens;
+    }
+  }
+
+  return researchProduction;
+}
 // calculate, by how much your population will grow or shrink
 export function estimatedCitizenGrowth(G){
   const foodProduction = calculateFoodProduction(G);

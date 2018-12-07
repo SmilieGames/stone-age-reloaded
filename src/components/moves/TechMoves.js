@@ -57,27 +57,27 @@ export const technologies = {
   },
   science: {
     label: 'Science',
-    description: 'Unlocks `Science`. 10 citizen max, +3 Research points per citizen',
+    description: 'Unlocks `Research`. 10 citizen max, +3 Research points per citizen',
     active: false,
     cost: 200,
     requirements: ['useOfFire'],
-    enhancement: (G) => { G.science.active = true; /** TODO add building unlock */ }
+    enhancement: (G) => { G.research.active = true; /** TODO add building unlock */ }
   },
   art: {
     label: 'Art',
-    description: 'Science +15 citizen max',
+    description: 'Research +15 citizen max',
     active: false,
     cost: 200,
     requirements: ['science'],
-    enhancement: (G) => { G.science.maxCitizens += 15; }
+    enhancement: (G) => { G.research.maxCitizens += 15; }
   },
   advancedScience: {
     label: 'Advanced Science',
-    description: 'Science + 50 citizen max',
+    description: 'Research + 50 citizen max',
     active: false,
     cost: 200,
     requirements: ['art'],
-    enhancement: (G) => { G.science.maxCitizens += 50; }
+    enhancement: (G) => { G.research.maxCitizens += 50; }
   },
   buildingOfFire: {
     label: 'Building of Fire',
@@ -169,6 +169,67 @@ export const technologies = {
     requirements: ['architecture', 'barter'],
     enhancement: (G) => { /** TODO */ }
   },
+
+  hunting: {
+    label: 'Hunting',
+    description: 'Unlocks `hunting`. 5 citizen max, 3 food per citizen',
+    active: false,
+    cost: 200,
+    requirements: [],
+    enhancement: (G) => { /** TODO */ }
+  },
+  primitiveWeapons: {
+    label: 'Primitive Weapons',
+    description: 'Strength +30%',
+    active: false,
+    cost: 200,
+    requirements: ['hunting'],
+    enhancement: (G) => { /** TODO */ }
+  },
+  thrownWeapons: {
+    label: 'Thrown Weapons',
+    description: 'Strength +50%',
+    active: false,
+    cost: 200,
+    requirements: ['primitiveWeapons'],
+    enhancement: (G) => { /** TODO */ }
+  },
+  rangedWeapons: {
+    label: 'Ranged Weapons',
+    description: 'Strength +100%',
+    active: false,
+    cost: 200,
+    requirements: ['thrownWeapons'],
+    enhancement: (G) => { /** TODO */ }
+  },
+
+  /** I left out the second branch from the right. doen't seem neccessary at the moment */
+
+  fishing: {
+    label: 'Fishing',
+    description: 'Unlocks `fishing`. 20 citizen max, 3 food per citizen',
+    active: false,
+    cost: 200,
+    requirements: ['hunting'],
+    enhancement: (G) => { G.fishing.active = true; }
+  },
+  fishHooks: {
+    label: 'Fishing Hooks',
+    description: '`fishing`. +40 citizen max, +1 food per citizen',
+    active: false,
+    cost: 200,
+    requirements: ['fishing'],
+    enhancement: (G) => { G.fishing.maxCitizens += 40; G.fishing.foodProductionFactor += 1; }
+  },
+  fishingNets: {
+    label: 'Fishing Nets',
+    description: '`fishing` +140 citizen max, +2 food per citizen',
+    active: false,
+    cost: 200,
+    requirements: ['fishingNets'],
+    enhancement: (G) => { G.fishing.maxCitizens += 140; G.fishing.foodProductionFactor +=2; }
+  },
+  
   
   
 }

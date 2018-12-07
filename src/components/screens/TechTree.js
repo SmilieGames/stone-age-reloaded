@@ -94,7 +94,7 @@ const TechTree = (props) => {
       <Tile><Tech {...data} tech="barter"/></Tile>
       <Tile/>
       <Tile/>
-      <Tile><Tech {...data} tech="PALACE"/></Tile>
+      <Tile><Tech {...data} tech="palace"/></Tile>
       <Tile/>
       <Tile/>
       <Tile/>

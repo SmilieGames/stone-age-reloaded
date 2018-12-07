@@ -65,7 +65,14 @@ const Village = (props) => {
       </Tile>
       <Tile />
       <Tile>
-        <StatusField label="Culture"/>
+        <StatusField 
+          label="Research"
+          currentCitizens={props.G.research.currentCitizens} 
+          maxCitizen={props.G.research.maxCitizens}
+          visible={props.G.research.active}
+          removeFunction={props.moves.removeCitizens}
+          addFunction={props.moves.addCitizens}
+          station="research"/>
       </Tile>
 
       <Tile />
@@ -81,7 +88,14 @@ const Village = (props) => {
       </Tile>
       <Tile />
       <Tile>
-        <StatusField label="Stone"/>
+        <StatusField 
+          label="Mining" 
+          currentCitizens={props.G.mining.currentCitizens} 
+          maxCitizen={props.G.mining.maxCitizens}
+          visible={props.G.mining.active}
+          removeFunction={props.moves.removeCitizens}
+          addFunction={props.moves.addCitizens}
+          station="mining"/>
       </Tile>
 
       <Tile>
@@ -92,7 +106,13 @@ const Village = (props) => {
           station="village"/>
       </Tile>
       <Tile>
-        <StatusField label="Fishing"/>
+        <StatusField 
+        label="Fishing"
+          currentCitizens={props.G.fishing.currentCitizens} 
+          maxCitizen={props.G.fishing.maxCitizens}
+          visible={props.G.fishing.active}
+          removeFunction={props.moves.removeCitizens}
+          addFunction={props.moves.addCitizens}/>
       </Tile>
       <Tile />
       <Tile />

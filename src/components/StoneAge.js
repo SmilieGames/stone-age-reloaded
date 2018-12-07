@@ -11,7 +11,7 @@ const StoneAge = Game({
     resources: {
         food: 0,
         //TODO: new ressources added but not linked
-        researchPoints: 100, // TESTING
+        researchPoints: 0, // TESTING
         culture: 0,
         production: 0
     },
@@ -28,19 +28,23 @@ const StoneAge = Game({
       maxCitizens: 50,
       foodProductionFactor: 2.0
     },
-    //TODO: new Object Mining added but not linked
+    fishing: {
+      active: false,
+      currentCitizens: 0,
+      maxCitizens: 20,
+      foodProductionFactor: 3.0
+    },
     mining:{
       active: false,
       currentCitizens: 0,
       maxCitizens: 0,
       productionProductionFactor: 2.0
     },
-    //TODO: new Object religion added but not linked
-    science:{
+    research:{
       active: false,
       currentCitizens: 0,
       maxCitizens: 10,
-      scienceProductionFactor: 3.0
+      researchProductionFactor: 3.0
     },
 
     village: {
@@ -51,7 +55,9 @@ const StoneAge = Game({
     technologies,
 
     factors: {
-      foodConsumptionPerCitizen: 1.0
+      foodConsumptionPerCitizen: 1.0,
+      researchPassiveProduction: 15,
+      productionPassiveProduction: 2
     },
 
   }),
@@ -63,7 +69,9 @@ const StoneAge = Game({
     calculate(G, ctx){
 
       // food production
-      G.resources.food += Utils.calculateFoodProduction(G);
+      G.resources.food            += Utils.calculateFoodProduction(G);
+      G.resources.researchPoints  += Utils.calculateResearchProduction(G);
+      G.resources.production      += Utils.calculateProductionProduction(G);
 
       // food consumption (adjusted for new citizens)
       for(var key in G){
