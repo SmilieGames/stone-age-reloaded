@@ -59,7 +59,7 @@ const TechTree = (props) => {
       <Tile/>
       <Tile/>
       <Tile><Tech {...data} tech="thrownWeapons"/></Tile>
-      <Tile><Tech {...data} tech="trapping"/></Tile>
+      <Tile/>
       <Tile><Tech {...data} tech="fishing"/></Tile>
       <Tile/>
       <Tile/>
@@ -72,7 +72,7 @@ const TechTree = (props) => {
       <Tile/>
       <Tile><Tech {...data} tech="advancedStoneTools"/></Tile>
       <Tile/>
-      <Tile><Tech {...data} tech="captiveAnimals"/></Tile>
+      <Tile/>
       <Tile/>
       <Tile/>
       <Tile/>
@@ -85,7 +85,7 @@ const TechTree = (props) => {
       <Tile/>
       <Tile><Tech {...data} tech="componentTools"/></Tile>
       <Tile><Tech {...data} tech="rangedWeapons"/></Tile>
-      <Tile><Tech {...data} tech="domestication"/></Tile>
+      <Tile/>
       <Tile><Tech {...data} tech="fishHooks"/></Tile>
       <Tile/>
       <Tile/>
@@ -98,7 +98,7 @@ const TechTree = (props) => {
       <Tile/>
       <Tile/>
       <Tile/>
-      <Tile><Tech {...data} tech="animalHusbandry"/></Tile>
+      <Tile/>
       <Tile><Tech {...data} tech="fishingNets"/></Tile>
       <Tile/>
       <Tile/>
