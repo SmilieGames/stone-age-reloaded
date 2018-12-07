@@ -96,7 +96,7 @@ export default class Tech extends React.Component {
       <Tooltip title={technologies[tech].description}>
         <div>
           <Button disabled={!this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
-              {(technologies[tech]? technologies[tech].label : tech)}
+              {(technologies[tech]? technologies[tech].label : tech)} <br/> {technologies[tech].cost}
           </Button>
         </div>
       </Tooltip>

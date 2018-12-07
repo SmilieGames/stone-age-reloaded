@@ -25,7 +25,7 @@ const StoneAge = Game({
     agrar: {
       active: false,
       currentCitizens: 0,
-      maxCitizens: 10,
+      maxCitizens: 50,
       foodProductionFactor: 2.0
     },
     //TODO: new Object Mining added but not linked
@@ -36,11 +36,11 @@ const StoneAge = Game({
       productionProductionFactor: 2.0
     },
     //TODO: new Object religion added but not linked
-    religion:{
+    science:{
       active: false,
       currentCitizens: 0,
-      maxCitizens: 0,
-      religionProductionFactor: 2.0
+      maxCitizens: 10,
+      scienceProductionFactor: 3.0
     },
 
     village: {
