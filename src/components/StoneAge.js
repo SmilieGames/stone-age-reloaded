@@ -20,31 +20,36 @@ const StoneAge = Game({
       active: false,
       currentCitizens: 0,
       maxCitizens: 12,
-      foodProductionFactor: 2.0
+      foodProductionPerCitizen: 2.0,
+      foodProductionFactor: 1.0
     },
     agrar: {
       active: false,
       currentCitizens: 0,
       maxCitizens: 50,
-      foodProductionFactor: 2.0
+      foodProductionPerCitizen: 2.0,
+      foodProductionFactor: 1.0
     },
     fishing: {
       active: false,
       currentCitizens: 0,
       maxCitizens: 20,
-      foodProductionFactor: 3.0
+      foodProductionPerCitizen: 3.0,
+      foodProductionFactor: 1.0
     },
     mining:{
       active: false,
       currentCitizens: 0,
       maxCitizens: 10,
-      productionProductionFactor: 2.0
+      productionProductionPerCitizen: 2,
+      productionProductionFactor: 1.0
     },
     research:{
       active: false,
       currentCitizens: 0,
       maxCitizens: 10,
-      researchProductionFactor: 3.0
+      researchProductionPerCitizen: 3,
+      researchProductionFactor: 1.0
     },
 
     village: {

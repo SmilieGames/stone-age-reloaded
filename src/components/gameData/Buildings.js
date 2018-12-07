@@ -7,7 +7,17 @@ export const buildings = {
     active: false,
     buildable: false,
     cost: 200,
-    enhancement: (G) => { G.maxCitizens += 10;  }
+    enhancement: (G) => { 
+      G.maxCitizens += 10;  
+      for(var key in G){
+        if(G[key].researchProductionFactor != null){
+          G[key].researchProductionFactor += 0.2;
+        }
+        if(G[key].productionProductionFactor != null){
+          G[key].productionProductionFactor += 0.2;
+        }
+      }
+    }
   },
   workshop: {
     label: 'Workshop',
@@ -15,7 +25,13 @@ export const buildings = {
     active: false,
     buildable: false,
     cost: 200,
-    enhancement: (G) => {  }
+    enhancement: (G) => { 
+      for(var key in G){
+        if(G[key].productionProductionFactor != null){
+          G[key].productionProductionFactor += 1;
+        }
+      }
+    }
   },
   huntingCamp: {
     label: 'Hunting Camp',

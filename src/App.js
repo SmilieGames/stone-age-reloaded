@@ -9,7 +9,7 @@ const App = Client({
   game: StoneAge,
   board: StoneAgeRenderer,
   numPlayers: 1,
-  debug: false
+  debug: true
 })
 
 export default App;

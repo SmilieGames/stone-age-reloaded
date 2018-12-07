@@ -28,11 +28,11 @@ export function calculateFoodProduction(G){
   let foodProduction = 0;
 
   for(var key in G){
-    if(G[key].foodProductionFactor != null){
-      foodProduction += G[key].foodProductionFactor * G[key].currentCitizens;
+    if(G[key].foodProductionFactor != null && G[key].foodProductionPerCitizen != null){
+      foodProduction += G[key].foodProductionFactor * G[key].foodProductionPerCitizen * G[key].currentCitizens;
     }
   }
-
+console.log(foodProduction);
   return foodProduction;
 }
 
@@ -41,8 +41,8 @@ export function calculateProductionProduction(G){
   let prductionProduction = G.factors.productionPassiveProduction;
 
   for(var key in G){
-    if(G[key].productionProductionFactor != null){
-      prductionProduction += G[key].productionProductionFactor * G[key].currentCitizens;
+    if(G[key].productionProductionFactor != null && G[key].productionProductionPerCitizen != null){
+      prductionProduction += G[key].productionProductionFactor * G[key].productionProductionPerCitizen * G[key].currentCitizens;
     }
   }
 
@@ -54,8 +54,8 @@ export function calculateResearchProduction(G){
   let researchProduction = G.factors.researchPassiveProduction;
 
   for(var key in G){
-    if(G[key].researchProductionFactor != null){
-      researchProduction += G[key].researchProductionFactor * G[key].currentCitizens;
+    if(G[key].researchProductionFactor != null && G[key].researchProductionPerCitizen != null){
+      researchProduction += G[key].researchProductionFactor * G[key].researchProductionPerCitizen * G[key].currentCitizens;
     }
   }
 
