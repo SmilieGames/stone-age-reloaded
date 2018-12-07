@@ -65,6 +65,7 @@ const StoneAge = Game({
   moves: {
     ...VillageMoves,
     ...TechMoves,
+    ...BuildingMoves,
     // wird zu ...VillageMoves
     
     calculate(G, ctx){
