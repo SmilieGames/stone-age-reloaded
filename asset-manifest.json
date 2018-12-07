@@ -1,13 +1,15 @@
 {
   "main.css": "/stone-age-reloaded/static/css/main.21628308.chunk.css",
-  "main.js": "/stone-age-reloaded/static/js/main.971c0e94.chunk.js",
-  "main.js.map": "/stone-age-reloaded/static/js/main.971c0e94.chunk.js.map",
-  "static/js/1.c47d4e76.chunk.js": "/stone-age-reloaded/static/js/1.c47d4e76.chunk.js",
-  "static/js/1.c47d4e76.chunk.js.map": "/stone-age-reloaded/static/js/1.c47d4e76.chunk.js.map",
+  "main.js": "/stone-age-reloaded/static/js/main.523596ab.chunk.js",
+  "main.js.map": "/stone-age-reloaded/static/js/main.523596ab.chunk.js.map",
+  "static/js/1.e8f86e96.chunk.js": "/stone-age-reloaded/static/js/1.e8f86e96.chunk.js",
+  "static/js/1.e8f86e96.chunk.js.map": "/stone-age-reloaded/static/js/1.e8f86e96.chunk.js.map",
   "runtime~main.js": "/stone-age-reloaded/static/js/runtime~main.7785a42f.js",
   "runtime~main.js.map": "/stone-age-reloaded/static/js/runtime~main.7785a42f.js.map",
+  "static/media/button.jpg": "/stone-age-reloaded/static/media/button.7377951f.jpg",
+  "static/media/background.png": "/stone-age-reloaded/static/media/background.1c3c537e.png",
   "static/css/main.21628308.chunk.css.map": "/stone-age-reloaded/static/css/main.21628308.chunk.css.map",
   "index.html": "/stone-age-reloaded/index.html",
-  "precache-manifest.f5641d0cd7ef8d1d16c67b463796401d.js": "/stone-age-reloaded/precache-manifest.f5641d0cd7ef8d1d16c67b463796401d.js",
+  "precache-manifest.8b1c4b24aad735ee03eaceae3a925551.js": "/stone-age-reloaded/precache-manifest.8b1c4b24aad735ee03eaceae3a925551.js",
   "service-worker.js": "/stone-age-reloaded/service-worker.js"
 }

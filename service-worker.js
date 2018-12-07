@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/stone-age-reloaded/precache-manifest.f5641d0cd7ef8d1d16c67b463796401d.js"
+  "/stone-age-reloaded/precache-manifest.8b1c4b24aad735ee03eaceae3a925551.js"
 );
 
 workbox.clientsClaim();
