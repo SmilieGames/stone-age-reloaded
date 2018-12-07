@@ -1,8 +1,9 @@
 import { Game } from 'boardgame.io/core';
 
 import * as Utils from './Utils'
-import VillageMoves from './moves/VillageMoves'
-import { TechMoves, technologies } from './moves/TechMoves'
+import VillageMoves from './gameData/_General'
+import { TechMoves, technologies } from './gameData/Technologies'
+import { BuildingMoves, buildings } from './gameData/Buildings'
 
 const StoneAge = Game({
   setup: () => ({
@@ -10,8 +11,7 @@ const StoneAge = Game({
 
     resources: {
         food: 0,
-        //TODO: new ressources added but not linked
-        researchPoints: 0, // TESTING
+        researchPoints: 0,
         culture: 0,
         production: 0
     },
@@ -53,6 +53,7 @@ const StoneAge = Game({
     },
 
     technologies,
+    buildings,
 
     factors: {
       foodConsumptionPerCitizen: 1.0,
@@ -96,6 +97,17 @@ const StoneAge = Game({
       // don't let food build up indefinitely. Otherwise you could hoard food and build houses later on and BOOM massive citizen rate in one turn.
       if(G.resources.food > 10){
         G.resources.food = 9;
+      }
+    }
+  },
+  flow: {
+    endGameIf: (G, ctx) => {
+      if(ctx.turn === 100){
+        if(G.buildings.palace.active === true){
+          return { win: true }
+        }else{
+          return { win: false }
+        }
       }
     }
   }

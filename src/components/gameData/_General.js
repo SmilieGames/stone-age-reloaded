@@ -1,4 +1,4 @@
-const VillageMoves = {   
+const GeneralMoves = {   
   addCitizens(G, ctx, selectedStation){
     if(G[selectedStation].currentCitizens < G[selectedStation].maxCitizens && G.village.currentCitizens > 0){
       G[selectedStation].currentCitizens++;
@@ -14,4 +14,4 @@ const VillageMoves = {
 }
 
 
-export default VillageMoves;
+export default GeneralMoves;
