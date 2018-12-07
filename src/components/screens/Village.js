@@ -107,12 +107,13 @@ const Village = (props) => {
       </Tile>
       <Tile>
         <StatusField 
-        label="Fishing"
+          label="Fishing"
           currentCitizens={props.G.fishing.currentCitizens} 
           maxCitizen={props.G.fishing.maxCitizens}
           visible={props.G.fishing.active}
           removeFunction={props.moves.removeCitizens}
-          addFunction={props.moves.addCitizens}/>
+          addFunction={props.moves.addCitizens}
+          station="fishing"/>
       </Tile>
       <Tile />
       <Tile />

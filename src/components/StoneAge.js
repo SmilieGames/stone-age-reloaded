@@ -37,7 +37,7 @@ const StoneAge = Game({
     mining:{
       active: false,
       currentCitizens: 0,
-      maxCitizens: 0,
+      maxCitizens: 10,
       productionProductionFactor: 2.0
     },
     research:{

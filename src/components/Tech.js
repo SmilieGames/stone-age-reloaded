@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 
+import ButtonBackground from '../button.jpg'
 
 /**
  * Class that holds the logic and view for a technology in the tech tree view.
@@ -95,7 +96,7 @@ export default class Tech extends React.Component {
     return (
       <Tooltip title={technologies[tech].description}>
         <div>
-          <Button disabled={!this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{ marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
+          <Button disabled={!this.isClickable()} onClick={this.unlockTechnology} variant="contained" style={{marginTop: '10%', marginLeft: '20%', marginRight: '20%' }}>
               {(technologies[tech]? technologies[tech].label : tech)} <br/> {technologies[tech].cost}
           </Button>
         </div>

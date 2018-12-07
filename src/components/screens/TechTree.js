@@ -3,7 +3,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
 import Tech from '../Tech';
-
+import Background from '../../background.png'
 const Tile = (props) => {
   return (
     <Grid item xs={1} style={{ height: '10vh', backgroundColor: ''}}>
