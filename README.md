@@ -6,7 +6,7 @@ In this game you are the leader of an acient tribe and your only goal is to buil
 
 ## Notes
 
-This game is a work in progress and is definetely not playable yet. But we are working hard to create all the neccessary assets and game logics as fast as possible.
+Eventhough this game is playable it is missing some core features, such as buildings, fighting and (maybe most importantly) win conditions. Those will follow over the next few days.
 
 ## Checklist:
 
